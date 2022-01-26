@@ -100,7 +100,7 @@ if __name__ == "__main__":
     nz = 100
     ngf = 64
     ndf = 64
-    numEpochs = 1024 + 1
+    numEpochs = 1024
     lr = 0.00002
     beta1 = 0.5
     ngpu = 1
@@ -284,7 +284,8 @@ if __name__ == "__main__":
             temp_data = {}
 
 
-
+    torch.save(G.state_dict(),"state/G")
+    torch.save(D.state_dict(),"state/D")
 
 
     """
@@ -319,11 +320,6 @@ if __name__ == "__main__":
     plt.imshow(np.transpose(img_list[-1],(1,2,0)))
     plt.show()
 
-    
-    for img in img_list:
-        model.device()
-        output = model(img)
-        output = output.cpu().numpy()
-        cv2.imwrite(output, "image.png")
+
     """
 
