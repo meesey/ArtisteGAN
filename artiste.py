@@ -100,7 +100,7 @@ if __name__ == "__main__":
     nz = 100
     ngf = 64
     ndf = 64
-    numEpochs = 64 + 1
+    numEpochs = 1024
     lr = 0.00002
     beta1 = 0.5
     ngpu = 1
@@ -183,7 +183,7 @@ if __name__ == "__main__":
 
     print("Train Start")
 
-    for epoch in range(numEpochs):
+    for epoch in range(numEpochs + 1):
         time_epoch_start = time.time()
         
         for i, data in enumerate(dataloader, 0):
