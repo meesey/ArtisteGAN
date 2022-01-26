@@ -146,7 +146,7 @@ if __name__ == "__main__":
     D = Discriminator(ngpu).to(device)
 
     if (device.type == 'cuda') and (ngpu > 1):
-        D = nn.DataParallel(netD, list(range(ngpu)))
+        D = nn.DataParallel(D, list(range(ngpu)))
 
     D.apply(weights_init)
 
